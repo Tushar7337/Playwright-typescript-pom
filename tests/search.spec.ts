@@ -5,8 +5,7 @@ import * as data from "../tests/data/this.json"
 test.beforeEach('Login with valid credentials', async ({page})=>{
     const pages = Pages(page);
     await pages.loginPage.gotoLoginPage();
-    //await pages.loginPage.loginWithCredentials(data.validData.userName, data.validData.password);
-    // await expect(page).toHaveURL('https://tutorialsninja.com/demo/index.php?route=account/account');
+    
 })
 
 test.describe('[@Feature-Search] Verify search products scenario',() =>{
