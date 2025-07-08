@@ -1,0 +1,11 @@
+{
+    "validData": {
+        "userName": "cucu@gmail.com",
+        "password": "Pass@1234"
+    },
+    "invalidData": {
+        "userName": "cucu@gmail.com",
+        "password": "secret_123"
+    },
+    "errorMessage": "Warning: No match for E-Mail Address and/or Password."
+}
