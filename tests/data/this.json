@@ -7,5 +7,9 @@
         "userName": "cucu@gmail.com",
         "password": "secret_123"
     },
+    "SignUp":{
+        "accountCreated":"Your Account Has Been Created!",
+        "duplicateEmail":""
+    },
     "errorMessage": "Warning: No match for E-Mail Address and/or Password."
 }
