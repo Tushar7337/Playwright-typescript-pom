@@ -18,6 +18,15 @@ test.describe('[@Feature-SignUp]', () =>{
         await pages.signUpPage.verifyAccountCreatedSuccessfully(data.SignUp.accountCreated)
     })
 
+    test('[@P1] Verify error message for duplicate email while sign up', async ({page}) =>{
+        const pages = Pages(page);
+        const userData = generateRandomData()
+        await page.pause()
+        await pages.signUpPage.navigateToRegisterPage();
+        await pages.signUpPage.registerWithDuplicateEmail(userData.firstname, userData.lastname, "cucu@gmail.com", userData.phone, userData.pass, userData.confPass);
+        await pages.signUpPage.verifyDuplicateEmailmessage(data.SignUp.duplicateEmail);
+    })
+
 test.afterEach('Close Browser', async ({page}) => {
     await page.close();
     })

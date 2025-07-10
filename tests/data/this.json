@@ -9,7 +9,7 @@
     },
     "SignUp":{
         "accountCreated":"Your Account Has Been Created!",
-        "duplicateEmail":""
+        "duplicateEmail":"Warning: E-Mail Address is already registered!"
     },
     "errorMessage": "Warning: No match for E-Mail Address and/or Password."
 }
