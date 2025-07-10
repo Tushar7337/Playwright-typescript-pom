@@ -10,21 +10,22 @@ Before following the steps given below, please ensure that npm and node are inst
 ## Execution
 - Run all the test cases from the "./tests" folder
   ```bash
-  npm run test
+  npx playwright test
   ```
 - Run test cases for a specific file
   ```bash
-  npm run test {file-name.spec.ts}
+  npx playwright test tests/{file-name.spec.ts}
   ```
 - Run test cases in headed mode
   ```bash
-  npm run test -- --headed
+  npx playwright test --headed
   ```
-- Run test cases using tag
+- Run test cases using trace
   ```bash
-  npm run test -- --grep "{@tag-name}"
+  npx playwright test --trace on
+  npx playwright show-report
   ```
 - Run test cases with a specific browser
   ```bash
-  npm run test -- --project {browser-name}
+  npx playwright test --project {browser-name}
   ```
