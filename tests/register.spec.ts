@@ -29,5 +29,4 @@ test.describe('[@Feature-SignUp]', () =>{
 test.afterEach('Close Browser', async ({page}) => {
     await page.close();
     })
-
 })

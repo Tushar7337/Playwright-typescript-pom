@@ -6,6 +6,7 @@ export class SearchPage extends BasePage{
     verifyValidProduct = this.page.locator("HP LP3065")
     searchErrorMessage = this.page.locator("//input[@id='button-search']/following-sibling::p")
 
+    // Method to search for a valid product
     async enterValidProduct(productName: string){
         await this.searchBar.click()
         await this.searchBar.fill(productName)
@@ -13,6 +14,7 @@ export class SearchPage extends BasePage{
         await (this.page).isVisible;
     }
 
+    // Method to search for an invalid product using the Enter key
     async enterInvalidProduct(productName: string){
         await this.searchBar.fill(productName)
         // To press ENTER instead of clicking the Search button

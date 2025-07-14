@@ -10,8 +10,6 @@ test.describe('[@Feature-Login] Verify Login test scenarios', () => {
     await pages.loginPage.loginWithCredentials(data.validData.userName, data.validData.password);
     // console.log(data.validData.password)
     await expect(page).toHaveURL('https://tutorialsninja.com/demo/index.php?route=account/account');
-
-    // Logout logic here
   });
 
   test("[@P1 @Regression] Verify user is unable to login with invalid credentials", async ({ page }) => {
