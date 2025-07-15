@@ -9,7 +9,7 @@ export const Pages = (page: Page) => {
     return {
         loginPage: new LoginPage(page),
         searchPage: new SearchPage(page),
-        signUpPage: new SignupPage(page)
+        signUpPage: new SignupPage(page),
 
     };
 };
