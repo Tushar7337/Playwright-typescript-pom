@@ -1,7 +1,7 @@
 import {test, expect} from "@playwright/test"
 import {Pages} from "../pages/pages"
-import * as data from "../tests/data/this.json"
-import { generateRandomData } from "./data/generateRandomData"
+import * as data from "../utilities/data/this.json"
+import { generateRandomData } from "../utilities/data/generateRandomData"
 
 test.beforeEach('Navigate to home screen', async ({page})=>{
     const pages = Pages(page)

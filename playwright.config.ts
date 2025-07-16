@@ -1,4 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
+import { on } from 'events';
 
 /**
  * Read environment variables from file.
@@ -12,9 +13,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  use: {
-    video: 'on',
-  },
+ 
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,

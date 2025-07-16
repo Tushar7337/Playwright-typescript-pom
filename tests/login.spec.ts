@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { Pages } from '../pages/pages';
-import * as data from '../tests/data/this.json'
+import * as data from '../utilities/data/this.json'
 
 test.describe('[@Feature-Login] Verify Login test scenarios', () => {
   test('[@P1 @Smoke] Verify user login with valid credentials and logout successfully', async ({ page }) => {
