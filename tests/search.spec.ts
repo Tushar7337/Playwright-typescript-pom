@@ -1,6 +1,5 @@
 import {test, expect} from "@playwright/test"
 import { Pages } from "../pages/pages"
-import * as data from "../tests/data/this.json"
 
 test.beforeEach('Login with valid credentials', async ({page})=>{
     const pages = Pages(page);
