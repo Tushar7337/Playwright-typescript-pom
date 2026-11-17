@@ -17,6 +17,8 @@ Before following the steps given below, please ensure that npm and node are inst
   ```bash
   npx playwright test
   ```
+  Search tests run a one-time authentication setup and reuse saved browser state;
+  the generated state file is ignored by Git.
 - Run test cases for a specific file
   ```bash
   npx playwright test tests/{file-name.spec.ts}

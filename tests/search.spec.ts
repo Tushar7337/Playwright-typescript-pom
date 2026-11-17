@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 import { Pages } from "../pages/pages";
 
-test.beforeEach("Login with valid credentials", async ({ page }) => {
+test.beforeEach("Open authenticated home page", async ({ page }) => {
   const pages = Pages(page);
   await pages.loginPage.gotoLoginPage();
 });
@@ -16,7 +16,7 @@ test.describe("[@Feature-Search] Verify search products scenario", () => {
     const pages = Pages(page);
     await pages.searchPage.enterInvalidProduct("Dell");
     await expect(pages.searchPage.searchErrorMessage).toContainText(
-      "There is no product that matches the search criteria."
+      "There is no product that matches the search criteria.",
     );
   });
 
