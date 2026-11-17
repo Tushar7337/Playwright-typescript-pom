@@ -1,5 +1,5 @@
-import { Locator, Page } from "@playwright/test";
-import { BasePage } from "./base-page";
+import { Locator, Page } from '@playwright/test';
+import { BasePage } from './base-page';
 
 export class LoginPage extends BasePage {
   readonly myAccount: Locator;
@@ -17,13 +17,13 @@ export class LoginPage extends BasePage {
     this.passwordInput = this.page.locator('//input[@id="input-password"]');
     this.loginButton = this.page.locator("//input[@value='Login']");
     this.loginError = this.page.locator(
-      "//div[text()='Warning: No match for E-Mail Address and/or Password.']"
+      "//div[text()='Warning: No match for E-Mail Address and/or Password.']",
     );
   }
 
   async gotoLoginPage() {
-    await this.page.goto("https://tutorialsninja.com/demo/");
-    await this.page.waitForLoadState("networkidle");
+    await this.page.goto('https://tutorialsninja.com/demo/');
+    await this.page.waitForLoadState('networkidle');
   }
 
   async loginWithCredentials(userName: string, password: string) {
