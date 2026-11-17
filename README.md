@@ -3,19 +3,25 @@
 This repository demonstrates the implementation of the Page Object Model (POM) design pattern with Playwright. This project is designed to provide a robust and maintainable testing framework for web applications using Playwright and TypeScript, with a focus on the Page Object Model pattern. The site under test is [QA Fox](https://tutorialsninja.com/demo/index.php?route=common/home) , a demo eCommerce store.
 
 ## Built With
+
 - [Playwright](https://playwright.dev)
-- [Typescript](https://www.typescriptlang.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## Installation
-Before following the steps given below, please ensure that npm and node are installed on your machine.
-- **Step1:** NodeJS 14(or above)
-- **Step2:** Install Playwright's latest version `npm init playwright@latest`
-- **Step3:** Install Playwright supported browsers `npx playwright install`
+
+Install Node.js 20.19 or later, then install the project dependencies:
+
+```bash
+npm install
+```
+
+The `postinstall` script automatically downloads Playwright's Chromium browser, so it is ready when installation completes. For a clean install in CI, use `npm ci`; it runs the same browser installation. ESLint, Prettier, and TypeScript checks are installed with the development dependencies.
 
 ## Execution
+
 - Run all the test cases from the "./tests" folder
   ```bash
-  npx playwright test
+  npm test
   ```
   Search tests run a one-time authentication setup and reuse saved browser state;
   the generated state file is ignored by Git.
@@ -34,5 +40,14 @@ Before following the steps given below, please ensure that npm and node are inst
   ```
 - Run test cases with a specific browser
   ```bash
-  npx playwright test --project {browser-name}
+  npx playwright test --project chromium
+  ```
+- Check lint, formatting, and TypeScript types
+  ```bash
+  npm run check
+  ```
+- Fix lint and formatting issues
+  ```bash
+  npm run lint:fix
+  npm run format
   ```

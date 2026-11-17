@@ -1,5 +1,5 @@
-import { BasePage } from "./base-page";
-import { expect, Locator, Page } from "@playwright/test";
+import { expect, Locator, Page } from '@playwright/test';
+import { BasePage } from './base-page';
 
 export class SignupPage extends BasePage {
   readonly myAccount: Locator;
@@ -16,8 +16,8 @@ export class SignupPage extends BasePage {
   readonly accountCreated: Locator;
   readonly duplicateEmailmessage: Locator;
 
-  constructor(paage: Page) {
-    super(paage);
+  constructor(page: Page) {
+    super(page);
     this.myAccount = this.page.locator('//span[text()="My Account"]');
     this.register = this.page.locator("(//a[text()='Register'])[1]");
     this.firstNameInput = this.page.locator("//input[@id='input-firstname']");

@@ -1,32 +1,33 @@
-import { test, expect } from "@playwright/test";
-import { Pages } from "../pages/pages";
+import { expect, test } from '@playwright/test';
+import { Pages } from '../pages/pages';
 
-test.beforeEach("Open authenticated home page", async ({ page }) => {
+test.beforeEach('Open authenticated home page', async ({ page }) => {
   const pages = Pages(page);
   await pages.loginPage.gotoLoginPage();
 });
 
-test.describe("[@Feature-Search] Verify search products scenario", () => {
-  test("[@smoke] Verify search valid product", async ({ page }) => {
+test.describe('[@Feature-Search] Verify search products scenario', () => {
+  test('[@smoke] Verify search valid product', async ({ page }) => {
     const pages = Pages(page);
-    await pages.searchPage.enterValidProduct("HP");
+    await pages.searchPage.enterValidProduct('HP');
+    await expect(pages.searchPage.validProduct).toBeVisible();
   });
 
-  test("Search invalid product", async ({ page }) => {
+  test('Search invalid product', async ({ page }) => {
     const pages = Pages(page);
-    await pages.searchPage.enterInvalidProduct("Dell");
+    await pages.searchPage.enterInvalidProduct('Dell');
     await expect(pages.searchPage.searchErrorMessage).toContainText(
-      "There is no product that matches the search criteria.",
+      'There is no product that matches the search criteria.',
     );
   });
 
-  test("Search without entering any product", async ({ page }) => {
+  test('Search without entering any product', async ({ page }) => {
     const pages = Pages(page);
-    await pages.searchPage.enterInvalidProduct("");
+    await pages.searchPage.enterInvalidProduct('');
     await expect(pages.searchPage.searchErrorMessage).toBeVisible();
   });
 });
 
-test.afterEach("Close Browser", async ({ page }) => {
+test.afterEach('Close Browser', async ({ page }) => {
   await page.close();
 });
