@@ -5,7 +5,7 @@ import { generateRandomData } from '../utilities/data/generateRandomData';
 
 test.beforeEach('Navigate to home screen', async ({ page }) => {
   const pages = Pages(page);
-  await pages.loginPage.gotoLoginPage();
+  await pages.loginPage.gotoHomePage();
 });
 
 test.describe('[@Feature-SignUp]', () => {

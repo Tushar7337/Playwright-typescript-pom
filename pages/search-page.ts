@@ -17,17 +17,13 @@ export class SearchPage extends BasePage {
     );
   }
 
-  // Method to search for a valid product
-  async enterValidProduct(productName: string) {
-    await this.searchBar.click();
+  async searchForProduct(productName: string) {
     await this.searchBar.fill(productName);
     await this.searchIcon.click();
   }
 
-  // Method to search for an invalid product using the Enter key
-  async enterInvalidProduct(productName: string) {
+  async searchForProductWithEnter(productName: string) {
     await this.searchBar.fill(productName);
-    // To press ENTER instead of clicking the Search button
     await this.searchBar.press('Enter');
   }
 }

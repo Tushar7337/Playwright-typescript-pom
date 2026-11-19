@@ -8,7 +8,7 @@ const authFile = 'playwright/.auth/user.json';
 
 setup('authenticate', async ({ page }) => {
   const loginPage = new LoginPage(page);
-  await loginPage.gotoLoginPage();
+  await loginPage.gotoHomePage();
   await loginPage.loginWithCredentials(
     data.validData.userName,
     data.validData.password,

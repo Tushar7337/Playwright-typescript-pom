@@ -8,7 +8,7 @@ test.describe('[@Feature-Login] Verify Login test scenarios', () => {
   }) => {
     const pages = Pages(page);
     // Login with valid credentials
-    await pages.loginPage.gotoLoginPage();
+    await pages.loginPage.gotoHomePage();
     await pages.loginPage.loginWithCredentials(
       data.validData.userName,
       data.validData.password,
@@ -24,7 +24,7 @@ test.describe('[@Feature-Login] Verify Login test scenarios', () => {
   }) => {
     // Login with invalid credentials
     const pages = Pages(page);
-    await pages.loginPage.gotoLoginPage();
+    await pages.loginPage.gotoHomePage();
     await pages.loginPage.loginWithInvalidCredentials(
       data.invalidData.userName,
       data.invalidData.password,

@@ -21,9 +21,9 @@ export class LoginPage extends BasePage {
     );
   }
 
-  async gotoLoginPage() {
+  async gotoHomePage() {
     await this.page.goto('https://tutorialsninja.com/demo/');
-    await this.page.waitForLoadState('networkidle');
+    await this.myAccount.waitFor({ state: 'visible' });
   }
 
   async loginWithCredentials(userName: string, password: string) {
